@@ -12,14 +12,7 @@ module.exports = {
             },
             // callback after authentication attempt
             function(err,httpResponse,body){
-                if (err)
-                    console.log(err);
-                else {
-                    sails.config.podio.currentProjects = JSON.parse(body.toString());
-                    console.log('service went through');
-                    callback(null, 'one');
-                }
-
+                callback(err, JSON.parse(body.toString()));
             }
         );
     }

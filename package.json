@@ -36,5 +36,13 @@
     "url": "git://github.com/manuelyang/KareoTicket.git"
   },
   "author": "manuelyang",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "assert": "^1.1.2",
+    "grunt-mocha-istanbul": "^2.2.0",
+    "istanbul": "^0.3.2",
+    "jade": "^1.8.1",
+    "mocha": "^2.0.1",
+    "sinon": "^1.11.1"
+  }
 }

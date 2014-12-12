@@ -1,9 +1,16 @@
 // ParseRawProjectService.js - in api/services
-var Request = require('request');
 
 module.exports = {
+    parse: function(project, callback) {
+        var fields = {};
 
-    parse: function(project) {
+        async.each(project.fields, function(field, callback){
+            fields[field.external_id] = field;
+            callback();
+        },function(err){
+            project.fields = fields;
+            callback(err, project);
+        });
 
     }
 };
