@@ -4898,9 +4898,9 @@ i.ki.ellipsis {
   border: 1px solid #d9dadd !important; }
   .dataTables_wrapper table.dataTable thead tr {
     height: 50px; }
-  .dataTables_wrapper table.dataTable thead td {
+  .dataTables_wrapper table.dataTable thead th {
     padding: 5px 10px;
-    border-bottom-color: #ececee; }
+    border-bottom-color: #d9dadd; }
   .dataTables_wrapper table.dataTable tbody tr.item {
     height: 75px; }
     .dataTables_wrapper table.dataTable tbody tr.item:hover td {

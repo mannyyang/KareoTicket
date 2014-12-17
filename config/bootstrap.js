@@ -9,7 +9,8 @@
  * http://sailsjs.org/#/documentation/reference/sails.config/sails.config.bootstrap.html
  */
 
-// Make sure items in the Firebase database are up to date with the most recent projects.
+// Make sure items in the Firebase database are up to date with the most recent projects
+// when server if first started up.
 module.exports.bootstrap = function(cb) {
 
     var clientId = sails.config.podio.clientId;
@@ -22,6 +23,7 @@ module.exports.bootstrap = function(cb) {
         viewId: sails.config.podio.currentProjectsViewId
     }
 
+    // Turning an asynchronous process to a synchronous one.
     async.series([
         // Authenticate with Podio (credentials found in config folder)
         function(callback){
@@ -32,7 +34,7 @@ module.exports.bootstrap = function(cb) {
         // Get projects from podio, parse them, attach the milestones as an object for easy access.
         // Then, add them to the Firebase database
         function(callback){
-            ProjectsService.getProjects(appInfo, function(err, result){
+            ProjectsService.getAllProjectsFromPodio(appInfo, function(err, result){
                 callback(err, result);
             });
         }

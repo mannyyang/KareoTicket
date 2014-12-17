@@ -32,7 +32,8 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  "GET /": {view: "index"}
+  "GET /": {view: "index"},
+  "GET /api/getallprojects": "ProjectsController.getAllProjects"
 
   /***************************************************************************
   *                                                                          *

@@ -8,11 +8,11 @@
  *
  */
 var Firebase = require('firebase');
-var projectsRef = new Firebase('https://blistering-torch-551.firebaseio.com/');
+var projectsRef = new Firebase('https://blistering-torch-551.firebaseio.com/projects');
 
 module.exports =  {
 
-    getProjects: function(appInfo, callback) {
+    getAllProjectsFromPodio: function(appInfo, callback) {
 
         var viewItems = [];
         var parsedProjects = [];
@@ -43,7 +43,7 @@ module.exports =  {
                 async.each(parsedProjects,
                     function(project, callback){
                         AttachMilestonesServices.toProject(project, function(err, attachedProject){
-                            projectsRef.child('projects').child(project.item_id).set(attachedProject);
+                            projectsRef.child(project.item_id).set(attachedProject);
                             callback();
                         });
                     },
@@ -58,6 +58,11 @@ module.exports =  {
         // optional callback
         function(err, results){
             return callback(err, results);
+        });
+    },
+    getAllProjectsFromDb: function(callback){
+        projectsRef.once('value', function (dataSnapshot){
+            return callback(dataSnapshot.val());
         });
     }
 };

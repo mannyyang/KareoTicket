@@ -72,10 +72,43 @@
     // After DOM ready calls.
     $(document).ready( function () {
 
-        // initialize data tables.
-        $('table').DataTable({
+        $.ajax({
+            url: '/api/getallprojects',
+            type: 'GET',
+            cache: false,
+            success: function(data){
+
+                $.each(data, function(key, value){
+                    var priority = value.fields.priority.values[0].value.text;
+                    var title = value.fields["project-title"].values[0].value;
+                    var projectOwner = value.fields["project-owner"].values[0].value.name;
+                    var deadline = value.fields["start-and-finish-dates"].values[0].start;
+                    var status = value.fields.stage.values[0].value.text;
+
+                    var row =
+                        "<tr class='item'>" +
+                            "<td class='priority'><div class=" + priority + ">" + priority + "</div></td>" +
+                            "<td class='title'><h3><b>" + title + "</b></h3></td>" +
+                            "<td class='owner'><p class='base-text'>" + projectOwner + "</p></td>" +
+                            "<td class='deadline'><p class='base-text'>" + moment(deadline, 'YYYY-MM-DD').endOf('day').fromNow() + "</p></td>" +
+                            "<td class='status'><span class='base-text " + status.replace(/ /g,'').toLowerCase() + "'>" + status + "</span></td>" +
+                        "</tr>";
+
+                    $('table tbody').append(row);
+
+                });
+
+                // initialize data tables.
+                $('table').DataTable();
+
+            },
+            error: function(err){
+                console.log(err);
+            }
 
         });
+
+
 
         // add text boxes with editable styles
         var editor = new MediumEditor('.editable', {

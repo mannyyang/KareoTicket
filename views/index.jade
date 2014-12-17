@@ -1,19 +1,15 @@
 extends layout
 
+block head
+	title Kareo Web Requests
+	link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css')
+
 block header
+	img.logo
+	h1.app-title
 
-block nav
-	#nav.grid-12
-		include partials/nav.jade
 
-block tables
-	#tables.grid-12
-		include partials/tables.jade
 
-block lightboxes
-	#lightboxes
-		include partials/lightbox_add_project.jade
-
-block iframes
-	#iframes.hide
-		iframe(id="project_podio_comm_frame", name="podio_comm_frame", src="https://podio.com/webforms/8527312/642603/frame")
+//block iframes
+//	#iframes.hide
+//		iframe(id="project_podio_comm_frame", name="podio_comm_frame", src="https://podio.com/webforms/8527312/642603/frame")
