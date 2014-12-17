@@ -1,30 +1,7 @@
 doctype html
 html
     block head
-        head
-            link(rel='stylesheet', href='/scss/core.css')
-    body
-        header
-            block header
-        body
-            block content
-                header.main-header
-                    .container
-                        img(class="logo", src="/images/kareo_logo_white.png")
-                        block header
-                .main-content
-                    .container
-                        .grid-12.page-title
-                            h1 Kareo Web Requests
-                        .grid-12
-                            block nav
-                            block tables
-                block lightboxes
-                block iframes
-            block scripts
-                script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-                script(src='https://podio.com/webforms/8527312/642603.js')
-                script(src='//cdn.datatables.net/1.10.0/js/jquery.dataTables.js')
-                script(src='/vendors/medium-editor/js/medium-editor.min.js')
-                script(src='/vendors/moment/moment.min.js')
-                script(src='/js/main.js')
+    body(ng-app="WebRequestsApp")
+        block header
+        block content
+        block scripts

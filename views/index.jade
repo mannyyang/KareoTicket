@@ -1,15 +1,61 @@
 extends layout
 
 block head
+	meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
 	title Kareo Web Requests
 	link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css')
+	link(rel='stylesheet', href='/bower_components/angular-material/angular-material.min.css')
+	link(rel='stylesheet', href='/bower_components/angular-material/themes/orange-theme.css')
+	link(rel='stylesheet', href='/styles/main.css')
 
 block header
-	img.logo
-	h1.app-title
+	header(layout="row")
+		div.logo-container(flex="10")
+			img.logo(src="http://www.kareo.com/img/logo.png")
+		h1.app-title(flex="90") Kareo Web Requests
 
+block content
+	section.app-content(layout="row", ng-controller="AppCtrl")
+		div.status.status-submitted(flex="25")
+			div.status-title
+				md-content
+					md-card
+			div.status-projects
+				md-content
+					md-card
+		div.status.status-submitted(flex="25")
+			div.status-title
+				md-content
+					md-card
+			div.status-projects
+				md-content
+					md-card
+		div.status.status-submitted(flex="25")
+			div.status-title
+				md-content
+					md-card
+			div.status-projects
+				md-content
+					md-card
+		div.status.status-submitted(flex="25")
+			div.status-title
+				md-content
+					md-card
+			div.status-projects
+				md-content
+					md-card
+		div.status.status-submitted(flex="25")
+			div.status-title
+				md-content
+					md-card
+			div.status-projects
+				md-content
+					md-card
 
-
-//block iframes
-//	#iframes.hide
-//		iframe(id="project_podio_comm_frame", name="podio_comm_frame", src="https://podio.com/webforms/8527312/642603/frame")
+block scripts
+	script(src="/bower_components/angular/angular.min.js")
+	script(src="/bower_components/angular-aria/angular-aria.min.js")
+	script(src="/bower_components/angular-animate/angular-animate.min.js")
+	script(src="/bower_components/hammerjs/hammer.js")
+	script(src="/bower_components/angular-material/angular-material.min.js")
+	script(src="/app/app.js")
