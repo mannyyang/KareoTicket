@@ -1,4 +1,13 @@
-img {
-  max-height: 100; }
+.md-default-theme {
+  background-color: #EEE !important; }
+
+header .logo-container {
+  margin: 0 0.625rem 0 0; }
+
+.md-subheader {
+  padding: 0.5rem 0.5rem 0.5rem 1rem; }
+
+.status-title {
+  line-height: 0; }
 
 /*# sourceMappingURL=main.css.map */

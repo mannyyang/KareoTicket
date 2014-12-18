@@ -1,3 +1,30 @@
-img {
-  max-height: 100%;
+@import '../bower_components/bourbon/dist/bourbon';
+
+.md-default-theme {
+  background-color: #EEE !important;
 }
+
+.app-content {
+  //width: 100%;
+}
+
+header {
+
+  .logo-container {
+    @include margin(0 rem(10) 0 0);
+  }
+
+}
+
+.md-subheader {
+  @include padding(rem(8) rem(8) rem(8) rem(16));
+}
+
+@mixin status($status){
+  .status-title {
+    line-height: 0;
+  }
+}
+
+@include status('ready');
+

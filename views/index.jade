@@ -9,22 +9,27 @@ block head
 	link(rel='stylesheet', href='/styles/main.css')
 
 block header
-	header(layout="row")
-		div.logo-container(flex="10")
+	header(layout="row", flex)
+		div.logo-container
 			img.logo(src="http://www.kareo.com/img/logo.png")
-		h1.app-title(flex="90") Kareo Web Requests
+		h1.app-title Kareo Web Requests
 
 block content
-	section.app-content(layout="row", ng-controller="AppCtrl")
+	section.app-content(layout="row", layout-margin, flex, ng-controller="ProjectsCtrl")
 		mixin status(status, name)
-			div(class="status status-"+status, flex="25")
-				div.status-title
-					md-content
-						md-card
-							= name
-				div.status-projects
-					md-content
-						md-card
+			md-whiteframe.md-whiteframe-z1(layout="columns", flex)
+				md-content(class="status status-"+status, flex)
+					md-subheader.status-title
+						h3= name
+					md-divider
+					md-list.status-projects
+						md-item
+							md-item-content
+								div.md-tile-left
+									img(src="http://placehold.it/50x50")
+								div.md-tile-content
+									span description
+									span desc2
 
 		+status('submitted', 'Submitted')
 		+status('inprogress', 'In Progress')

@@ -4,7 +4,7 @@
     angular.module('WebRequestsApp', [
         'ngMaterial'
     ])
-    .controller('AppCtrl', function($scope) {
+    .controller('ProjectsCtrl', function($scope) {
     });;
 
 })(window.angular);
