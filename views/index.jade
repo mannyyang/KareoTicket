@@ -16,41 +16,20 @@ block header
 
 block content
 	section.app-content(layout="row", ng-controller="AppCtrl")
-		div.status.status-submitted(flex="25")
-			div.status-title
-				md-content
-					md-card
-			div.status-projects
-				md-content
-					md-card
-		div.status.status-submitted(flex="25")
-			div.status-title
-				md-content
-					md-card
-			div.status-projects
-				md-content
-					md-card
-		div.status.status-submitted(flex="25")
-			div.status-title
-				md-content
-					md-card
-			div.status-projects
-				md-content
-					md-card
-		div.status.status-submitted(flex="25")
-			div.status-title
-				md-content
-					md-card
-			div.status-projects
-				md-content
-					md-card
-		div.status.status-submitted(flex="25")
-			div.status-title
-				md-content
-					md-card
-			div.status-projects
-				md-content
-					md-card
+		mixin status(status, name)
+			div(class="status status-"+status, flex="25")
+				div.status-title
+					md-content
+						md-card
+							= name
+				div.status-projects
+					md-content
+						md-card
+
+		+status('submitted', 'Submitted')
+		+status('inprogress', 'In Progress')
+		+status('ready', 'Ready for Testing')
+		+status('complete', 'Completed')
 
 block scripts
 	script(src="/bower_components/angular/angular.min.js")
