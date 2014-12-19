@@ -1,30 +1,53 @@
 @import '../bower_components/bourbon/dist/bourbon';
 
-.md-default-theme {
-  background-color: #EEE !important;
-}
+$background-color: #EEE;
+$subheader-font-color: #FFF;
+$submitted-color: #999;
+$inprogress-color: #729FCF;
+$ready-color: #F57900;
+$completed-color: #4E9A06;
 
-.app-content {
-  //width: 100%;
+html, body {
+  background-color: $background-color;
 }
 
 header {
-
   .logo-container {
     @include margin(0 rem(10) 0 0);
   }
-
 }
 
 .md-subheader {
-  @include padding(rem(8) rem(8) rem(8) rem(16));
-}
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 
-@mixin status($status){
-  .status-title {
-    line-height: 0;
+  @include padding(rem(8) rem(8) rem(8) rem(16));
+  @include margin(0 0 0 0);
+
+  &:not(.md-sticky-no-effect):after {
+    right: 0;
+  }
+
+  h2 {
+    font-weight: 300;
   }
 }
 
-@include status('ready');
+
+@mixin status($status, $color){
+  md-content.status-#{$status}{
+
+    .status-title {
+      line-height: 0;
+      background-color: $color;
+      color: $subheader-font-color;
+    }
+
+    background-color: $color;
+  }
+}
+
+@include status('submitted', $submitted-color);
+@include status('inprogress', $inprogress-color);
+@include status('ready', $ready-color);
+@include status('completed', $completed-color);
 

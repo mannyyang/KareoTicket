@@ -9,10 +9,10 @@ block head
 	link(rel='stylesheet', href='/styles/main.css')
 
 block header
-	header(layout="row", flex)
-		div.logo-container
+	header(layout="row", layout-margin, flex)
+		div.logo-container(flex=25)
 			img.logo(src="http://www.kareo.com/img/logo.png")
-		h1.app-title Kareo Web Requests
+		h1.app-title(flex) Kareo
 
 block content
 	section.app-content(layout="row", layout-margin, flex, ng-controller="ProjectsCtrl")
@@ -20,21 +20,19 @@ block content
 			md-whiteframe.md-whiteframe-z1(layout="columns", flex)
 				md-content(class="status status-"+status, flex)
 					md-subheader.status-title
-						h3= name
-					md-divider
+						h2= name
 					md-list.status-projects
 						md-item
 							md-item-content
 								div.md-tile-left
-									img(src="http://placehold.it/50x50")
 								div.md-tile-content
 									span description
 									span desc2
-
-		+status('submitted', 'Submitted')
-		+status('inprogress', 'In Progress')
-		+status('ready', 'Ready for Testing')
-		+status('complete', 'Completed')
+						md-divider
+		+status('submitted', 'SUBMITTED')
+		+status('inprogress', 'IN PROGRESS')
+		+status('ready', 'READY FOR TESTING')
+		+status('completed', 'COMPLETED')
 
 block scripts
 	script(src="/bower_components/angular/angular.min.js")

@@ -1,13 +1,44 @@
-.md-default-theme {
-  background-color: #EEE !important; }
+html, body {
+  background-color: #EEE; }
 
 header .logo-container {
   margin: 0 0.625rem 0 0; }
 
 .md-subheader {
-  padding: 0.5rem 0.5rem 0.5rem 1rem; }
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  margin: 0; }
+  .md-subheader:not(.md-sticky-no-effect):after {
+    right: 0; }
+  .md-subheader h2 {
+    font-weight: 300; }
 
-.status-title {
-  line-height: 0; }
+md-content.status-submitted {
+  background-color: #999; }
+  md-content.status-submitted .status-title {
+    line-height: 0;
+    background-color: #999;
+    color: #FFF; }
+
+md-content.status-inprogress {
+  background-color: #729FCF; }
+  md-content.status-inprogress .status-title {
+    line-height: 0;
+    background-color: #729FCF;
+    color: #FFF; }
+
+md-content.status-ready {
+  background-color: #F57900; }
+  md-content.status-ready .status-title {
+    line-height: 0;
+    background-color: #F57900;
+    color: #FFF; }
+
+md-content.status-completed {
+  background-color: #4E9A06; }
+  md-content.status-completed .status-title {
+    line-height: 0;
+    background-color: #4E9A06;
+    color: #FFF; }
 
 /*# sourceMappingURL=main.css.map */
