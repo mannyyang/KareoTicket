@@ -1,26 +1,23 @@
 @import '../bower_components/bourbon/dist/bourbon';
-
-$background-color: #EEE;
-$subheader-font-color: #FFF;
-$submitted-color: #999;
-$inprogress-color: #729FCF;
-$ready-color: #F57900;
-$completed-color: #4E9A06;
+@import 'helpers/variables';
 
 html, body {
   background-color: $background-color;
 }
 
+// top header styles
 header {
   .logo-container {
     @include margin(0 rem(10) 0 0);
   }
 }
 
+// List header styles
 .md-subheader {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-
   @include padding(rem(8) rem(8) rem(8) rem(16));
+
+  z-index: 2;
+
   @include margin(0 0 0 0);
 
   &:not(.md-sticky-no-effect):after {
@@ -28,11 +25,11 @@ header {
   }
 
   h2 {
-    font-weight: 300;
+    font-weight: $subheader-font-weight;
   }
 }
 
-
+// Status box styles
 @mixin status($status, $color){
   md-content.status-#{$status}{
 
@@ -51,3 +48,17 @@ header {
 @include status('ready', $ready-color);
 @include status('completed', $completed-color);
 
+// Projects list styles
+.status {
+
+  md-item-content {
+    background-color: $project-list-background-color;
+  }
+
+  .md-tile-content {
+    span {
+      display: block;
+    }
+  }
+
+}

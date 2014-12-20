@@ -8,6 +8,12 @@ block head
 	link(rel='stylesheet', href='/bower_components/angular-material/themes/orange-theme.css')
 	link(rel='stylesheet', href='/styles/main.css')
 
+	script(src="/bower_components/angular/angular.min.js")
+	script(src="/bower_components/angular-aria/angular-aria.min.js")
+	script(src="/bower_components/angular-animate/angular-animate.min.js")
+	script(src="/bower_components/hammerjs/hammer.js")
+	script(src="/bower_components/angular-material/angular-material.min.js")
+
 block header
 	header(layout="row", layout-margin, flex)
 		div.logo-container(flex=25)
@@ -15,29 +21,28 @@ block header
 		h1.app-title(flex) Kareo
 
 block content
-	section.app-content(layout="row", layout-margin, flex, ng-controller="ProjectsCtrl")
+	section.app-content(layout="row", layout-margin, flex, ng-controller="ProjectsCtrl as projects")
 		mixin status(status, name)
 			md-whiteframe.md-whiteframe-z1(layout="columns", flex)
 				md-content(class="status status-"+status, flex)
-					md-subheader.status-title
+					md-subheader.md-whiteframe-z2.status-title
 						h2= name
 					md-list.status-projects
-						md-item
+						md-item(ng-repeat="(key, value) in projects.projects")
 							md-item-content
 								div.md-tile-left
 								div.md-tile-content
-									span description
-									span desc2
-						md-divider
+									span.project-title {{value.title}}
+									span.project-owner {{value.fields["project-owner"].values[0].value.name}}
+									span.project-deadline {{value.fields["start-and-finish-dates"].values[0].start}}
+							md-divider
+
 		+status('submitted', 'SUBMITTED')
 		+status('inprogress', 'IN PROGRESS')
 		+status('ready', 'READY FOR TESTING')
 		+status('completed', 'COMPLETED')
 
 block scripts
-	script(src="/bower_components/angular/angular.min.js")
-	script(src="/bower_components/angular-aria/angular-aria.min.js")
-	script(src="/bower_components/angular-animate/angular-animate.min.js")
-	script(src="/bower_components/hammerjs/hammer.js")
-	script(src="/bower_components/angular-material/angular-material.min.js")
+
 	script(src="/app/app.js")
+	script(src="/app/controllers/ProjectsCtrl.js")

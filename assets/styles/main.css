@@ -1,3 +1,7 @@
+/*************************************************
+	Variables
+**************************************************/
+/* Colors */
 html, body {
   background-color: #EEE; }
 
@@ -5,40 +9,45 @@ header .logo-container {
   margin: 0 0.625rem 0 0; }
 
 .md-subheader {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   padding: 0.5rem 0.5rem 0.5rem 1rem;
+  z-index: 2;
   margin: 0; }
   .md-subheader:not(.md-sticky-no-effect):after {
     right: 0; }
   .md-subheader h2 {
-    font-weight: 300; }
+    font-weight: 400; }
 
 md-content.status-submitted {
-  background-color: #999; }
+  background-color: #454859; }
   md-content.status-submitted .status-title {
     line-height: 0;
-    background-color: #999;
+    background-color: #454859;
     color: #FFF; }
 
 md-content.status-inprogress {
-  background-color: #729FCF; }
+  background-color: #3371b6; }
   md-content.status-inprogress .status-title {
     line-height: 0;
-    background-color: #729FCF;
+    background-color: #3371b6;
     color: #FFF; }
 
 md-content.status-ready {
-  background-color: #F57900; }
+  background-color: #f0ad4e; }
   md-content.status-ready .status-title {
     line-height: 0;
-    background-color: #F57900;
+    background-color: #f0ad4e;
     color: #FFF; }
 
 md-content.status-completed {
-  background-color: #4E9A06; }
+  background-color: #6fcd83; }
   md-content.status-completed .status-title {
     line-height: 0;
-    background-color: #4E9A06;
+    background-color: #6fcd83;
     color: #FFF; }
+
+.status md-item-content {
+  background-color: white; }
+.status .md-tile-content span {
+  display: block; }
 
 /*# sourceMappingURL=main.css.map */
