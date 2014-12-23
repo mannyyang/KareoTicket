@@ -7,8 +7,8 @@
  * @docs        ::
  *
  */
-var Firebase = require('firebase');
-var projectsRef = new Firebase('https://blistering-torch-551.firebaseio.com/projects');
+
+"use strict";
 
 module.exports =  {
 
@@ -43,8 +43,29 @@ module.exports =  {
                 async.each(parsedProjects,
                     function(project, callback){
                         AttachMilestonesServices.toProject(project, function(err, attachedProject){
-                            projectsRef.child(project.item_id).set(attachedProject);
-                            callback();
+
+                            var kareoProject = {
+                                "id": attachedProject["item_id"],
+                                "name": attachedProject["title"],
+                                "created_on": attachedProject["created_on"],
+                                "priority": attachedProject["fields"]["priority"]["values"]["0"]["value"],
+                                "description": attachedProject["fields"]["project-description"]["values"]["0"]["value"],
+                                "owner": attachedProject["fields"]["project-owner"]["values"]["0"]["value"],
+                                "status": attachedProject["fields"]["stage"]["values"]["0"]["value"],
+                                "deadline": attachedProject["fields"]["start-and-finish-dates"]["values"]["0"],
+                                "milestones": attachedProject["fields"]["task"]
+                            }
+
+                            Project.create(kareoProject, function(err){
+                                if (err) {
+                                    callback(err);
+                                }
+                                else {
+                                    callback();
+                                }
+
+                            });
+
                         });
                     },
                     function(err){
@@ -60,9 +81,9 @@ module.exports =  {
             return callback(err, results);
         });
     },
-    getAllProjectsFromDb: function(callback){
-        projectsRef.once('value', function (dataSnapshot){
-            return callback(dataSnapshot.val());
-        });
-    }
+    //getAllProjectsFromDb: function(callback){
+    //    projectsRef.once('value', function (dataSnapshot){
+    //        return callback(dataSnapshot.val());
+    //    });
+    //}
 };
