@@ -6,6 +6,15 @@
 
     function ProjectsCtrl($http){
 
+        this.submitted = {
+            "key": {name: "submitted"},
+            "key1": {name: "submitted"}
+        }
+
+        this.inprogress = {
+            "key": {name: "in progress"}
+        }
+
         //var parentThis = this;
         //
         //// GET all projects in database

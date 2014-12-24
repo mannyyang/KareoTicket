@@ -7,11 +7,11 @@
         function($routeProvider) {
             $routeProvider.
                 when('/', {
-                    templateUrl: 'views/index.html',
+                    templateUrl: 'app/views/partials/statuses.html',
                     controller: 'ProjectsCtrl'
                 }).
                 otherwise({
-                    redirectTo: '/'
+                    redirectTo: '/hello'
                 });
         }]);
 

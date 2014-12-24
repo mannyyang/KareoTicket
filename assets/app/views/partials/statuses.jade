@@ -1,15 +1,15 @@
-section.app-content(layout="row", layout-margin, flex, ng-controller="ProjectsCtrl as projects")
+div.app-content(layout="row", layout-margin, flex, ng-controller="ProjectsCtrl as projects")
 	mixin status(status, name)
 		md-whiteframe.md-whiteframe-z1(layout="columns", flex)
 			md-content(class="status status-"+status, flex)
 				md-subheader.md-whiteframe-z2.status-title
 					h2= name
 				md-list.status-projects
-					md-item(ng-repeat="(key, value) in projects.projects")
+					md-item(ng-repeat="(key, value) in projects." + status)
 						md-item-content
 							div.md-tile-left
 							div.md-tile-content
-								span.project-title {{value.title}}
+								span.project-title {{value.name}}
 								span.project-owner {{value.fields["project-owner"].values[0].value.name}}
 								span.project-deadline {{value.fields["start-and-finish-dates"].values[0].start}}
 						md-divider
