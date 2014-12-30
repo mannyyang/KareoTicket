@@ -1,18 +1,27 @@
-div.app-content(layout="row", layout-margin, flex, ng-controller="ProjectsCtrl as projects")
+div.app-content(layout="row", layout-margin, flex, ng-controller="ProjectsController as projects")
 	mixin status(status, name)
 		md-whiteframe.md-whiteframe-z1(layout="columns", flex)
 			md-content(class="status status-"+status, flex)
 				md-subheader.md-whiteframe-z2.status-title
 					h2= name
 				md-list.status-projects
-					md-item(ng-repeat="(key, value) in projects." + status)
+					- var currStatus = ""
+					if status === 'submitted'
+						- currStatus = 'Submitted'
+					else if status === 'inprogress'
+						- currStatus = 'In progress'
+					else if status === 'ready'
+						- currStatus = 'Ready'
+					else if status === 'completed'
+						- currStatus = 'Complete'
+					md-item(ng-repeat="project in projects.unsorted | filter: {status: '#{currStatus}'}")
 						md-item-content
 							div.md-tile-left
 							div.md-tile-content
-								span.project-title {{value.name}}
-								span.project-owner {{value.fields["project-owner"].values[0].value.name}}
-								span.project-deadline {{value.fields["start-and-finish-dates"].values[0].start}}
-						md-divider
+								span.project-title {{project.name}}
+								span.project-owner
+								span.project-deadline
+						md-divider(ng-if="!$last")
 
 	+status('submitted', 'SUBMITTED')
 	+status('inprogress', 'IN PROGRESS')

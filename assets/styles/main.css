@@ -2,6 +2,9 @@
 	Variables
 **************************************************/
 /* Colors */
+md-divider.md-default-theme {
+  border-top-color: #E0E0E0; }
+
 html, body {
   background-color: #EEE; }
 

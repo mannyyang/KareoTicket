@@ -34,7 +34,7 @@ module.exports.podio = {
 
     milestonesId: 9819584,
 
-    currentProjectsViewId: 9077279,
+    currentProjectsViewId: 22606065,
 
     currentProjects: {},
 

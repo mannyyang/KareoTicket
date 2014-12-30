@@ -1,5 +1,6 @@
 @import '../bower_components/bourbon/dist/bourbon';
-@import 'helpers/variables';
+@import 'modules/variables';
+@import 'partials/list';
 
 html, body {
   background-color: $background-color;

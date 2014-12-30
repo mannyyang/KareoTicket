@@ -48,10 +48,10 @@ module.exports =  {
                                 "id": attachedProject["item_id"],
                                 "name": attachedProject["title"],
                                 "created_on": attachedProject["created_on"],
-                                "priority": attachedProject["fields"]["priority"]["values"]["0"]["value"],
+                                "priority": attachedProject["fields"]["priority"]["values"]["0"]["value"]["text"],
                                 "description": attachedProject["fields"]["project-description"]["values"]["0"]["value"],
                                 "owner": attachedProject["fields"]["project-owner"]["values"]["0"]["value"],
-                                "status": attachedProject["fields"]["stage"]["values"]["0"]["value"],
+                                "status": attachedProject["fields"]["stage"]["values"]["0"]["value"]["text"],
                                 "deadline": attachedProject["fields"]["start-and-finish-dates"]["values"]["0"],
                                 "milestones": attachedProject["fields"]["task"]
                             }
