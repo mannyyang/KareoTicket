@@ -2,14 +2,19 @@
 	Variables
 **************************************************/
 /* Colors */
+/*************************************************
+	Typography
+**************************************************/
+.status .md-button {
+  text-align: left;
+  text-transform: none;
+  white-space: normal;
+  color: inherit; }
+.status .project-deadline, .status .project-owner {
+  font-size: 0.875rem; }
+
 md-divider.md-default-theme {
   border-top-color: #E0E0E0; }
-
-html, body {
-  background-color: #EEE; }
-
-header .logo-container {
-  margin: 0 0.625rem 0 0; }
 
 .md-subheader {
   padding: 0.5rem 0.5rem 0.5rem 1rem;
@@ -50,7 +55,13 @@ md-content.status-completed {
 
 .status md-item-content {
   background-color: white; }
-.status .md-tile-content span {
-  display: block; }
+.status .md-button {
+  width: 100%; }
+
+html, body {
+  background-color: #EEE; }
+
+header .logo-container {
+  margin: 0 0.625rem 0 0; }
 
 /*# sourceMappingURL=main.css.map */

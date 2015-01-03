@@ -1,3 +1,15 @@
 /*************************************************
 	Typography
 **************************************************/
+.status {
+  .md-button {
+	text-align: left;
+	text-transform: none;
+	white-space: normal;
+
+	color: inherit;
+  }
+  .project-deadline, .project-owner{
+	font-size: rem($project-list-subtitle-font-size);
+  }
+}

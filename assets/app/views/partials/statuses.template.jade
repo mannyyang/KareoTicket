@@ -16,11 +16,18 @@ div.app-content(layout="row", layout-margin, flex, ng-controller="ProjectsContro
 						- currStatus = 'Complete'
 					md-item(ng-repeat="project in projects.unsorted | filter: {status: '#{currStatus}'}")
 						md-item-content
-							div.md-tile-left
-							div.md-tile-content
-								span.project-title {{project.name}}
-								span.project-owner
-								span.project-deadline
+							md-button
+								div.md-tile-left
+								div.md-tile-content
+									div.project-title {{project.name}}
+									div.project-owner
+										span.due 
+											b Due:&nbsp;
+										span {{project.owner.name}}
+									div.project-deadline
+										span.deadline
+											b Deadline:&nbsp;
+										span {{project.deadline["start_date"]}}
 						md-divider(ng-if="!$last")
 
 	+status('submitted', 'SUBMITTED')

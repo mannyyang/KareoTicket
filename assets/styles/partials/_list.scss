@@ -2,3 +2,52 @@ md-divider.md-default-theme {
   border-top-color: $border-color;
   
 }
+
+// List header styles
+.md-subheader {
+  @include padding(rem(8) rem(8) rem(8) rem(16));
+
+  z-index: 2;
+
+  @include margin(0 0 0 0);
+
+  &:not(.md-sticky-no-effect):after {
+    right: 0;
+  }
+
+  h2 {
+    font-weight: $subheader-font-weight;
+  }
+}
+
+// Status box styles
+@mixin status($status, $color){
+  md-content.status-#{$status}{
+
+    .status-title {
+      line-height: 0;
+      background-color: $color;
+      color: $subheader-font-color;
+    }
+
+    background-color: $color;
+  }
+}
+
+@include status('submitted', $submitted-color);
+@include status('inprogress', $inprogress-color);
+@include status('ready', $ready-color);
+@include status('completed', $completed-color);
+
+// Projects list styles
+.status {
+
+  md-item-content {
+    background-color: $project-list-background-color;
+  }
+
+  .md-button {
+    width: 100%;
+  }
+
+}

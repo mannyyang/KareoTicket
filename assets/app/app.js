@@ -7,7 +7,7 @@
         function($routeProvider) {
             $routeProvider.
                 when('/', {
-                    templateUrl: 'app/views/partials/statuses.html',
+                    templateUrl: 'app/views/partials/statuses.template.html',
                     controller: 'ProjectsController'
                 }).
                 otherwise({
