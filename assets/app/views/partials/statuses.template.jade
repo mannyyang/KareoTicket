@@ -2,7 +2,7 @@ div.app-content(layout="row", layout-margin, flex, ng-controller="ProjectsContro
 	mixin status(status, name)
 		md-whiteframe.md-whiteframe-z1(layout="columns", flex)
 			md-content(class="status status-"+status, flex)
-				md-subheader.md-whiteframe-z2.status-title
+				md-subheader.status-title
 					h2= name
 				md-list.status-projects
 					- var currStatus = ""
@@ -16,19 +16,19 @@ div.app-content(layout="row", layout-margin, flex, ng-controller="ProjectsContro
 						- currStatus = 'Complete'
 					md-item(ng-repeat="project in projects.unsorted | filter: {status: '#{currStatus}'}")
 						md-item-content
-							md-button
+							md-button(ng-click="projects.viewDetails($event, project)")
 								div.md-tile-left
 								div.md-tile-content
 									div.project-title {{project.name}}
 									div.project-owner
-										span.due 
-											b Due:&nbsp;
+										span.owner
+											b Requested by: &nbsp;
 										span {{project.owner.name}}
 									div.project-deadline
 										span.deadline
-											b Deadline:&nbsp;
+											b Deadline: &nbsp;
 										span {{project.deadline["start_date"]}}
-						md-divider(ng-if="!$last")
+						md-divider
 
 	+status('submitted', 'SUBMITTED')
 	+status('inprogress', 'IN PROGRESS')

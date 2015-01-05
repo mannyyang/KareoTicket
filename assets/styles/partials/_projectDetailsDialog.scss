@@ -1,0 +1,36 @@
+.project-details-dialog {
+
+  width: 650px;
+  
+  .project-title {
+    display: inline-block;
+  }
+  
+  .project-priority {
+    display: inline-block;
+    float: right;
+    
+    &.P1 {
+      color: $priority-p1-color;
+    }
+    
+    &.P2 {
+      color: $priority-p2-color;
+    }
+    
+    &.P3 {
+      color: $priority-p3-color;
+    }
+  }
+  
+  .project-details {
+    
+    margin: 1em 0;
+
+    > div {
+      margin-bottom: rem(12px);
+    }
+    
+  }
+
+}

@@ -3,9 +3,9 @@
 **************************************************/
 
 /* Colors */
-
 $background-color: #EEE;
 $subheader-font-color: #FFF;
+
 $submitted-color: #454859;
 $inprogress-color: #3371b6;
 $ready-color: #f0ad4e;
@@ -15,8 +15,12 @@ $border-color: #E0E0E0;
 
 $project-list-background-color: white;
 
+$priority-p1-color: #F26649;
+$priority-p2-color: #F0AD4E;
+$priority-p3-color: #3371b6;
+
 // typography variables
-$project-list-title-font-size: 16px;
-$project-list-subtitle-font-size: 14px;
+$project-list-title-font-size: 14px;
+$project-list-subtitle-font-size: 12px;
 
 $subheader-font-weight: 400;

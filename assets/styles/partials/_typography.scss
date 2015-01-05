@@ -1,7 +1,16 @@
 /*************************************************
 	Typography
 **************************************************/
+// Header copy
+
+
+// Status box copy
 .status {
+  
+  h2 {
+	font-weight: $subheader-font-weight;
+  }
+  
   .md-button {
 	text-align: left;
 	text-transform: none;
@@ -9,7 +18,21 @@
 
 	color: inherit;
   }
+  .project-title {
+	font-size: rem($project-list-title-font-size);
+	text-transform: capitalize;
+  }
   .project-deadline, .project-owner{
 	font-size: rem($project-list-subtitle-font-size);
   }
+}
+
+// Project details copy
+.project-details-dialog {
+  
+  .project-title {
+	text-transform: capitalize;
+	
+  }
+  
 }

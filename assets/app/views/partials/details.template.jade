@@ -1,0 +1,23 @@
+md-dialog.project-details-dialog
+	md-content
+		div.project-details-header
+			h3.project-title {{dialog.project.name}}
+			span.project-priority(ng-class="dialog.project.priority") {{dialog.project.priority}}
+		md-divider
+		div.project-details-container(layout="row",flex)
+			div.project-details
+				div.project-owner
+					b Requested by: &nbsp;
+					span {{dialog.project.owner.name}}
+				div.project-status 
+					b Status: &nbsp;
+					span {{dialog.project.status}}
+				div.project-deadline
+					b Deadline: &nbsp;
+					span {{dialog.project.deadline["start_date"]}}
+				div.project-description
+					b Project description: &nbsp;
+					div(ng-bind-html="dialog.trustAsHtml(dialog.project.description)")
+			div.project-milestones
+	div.md-actions
+		

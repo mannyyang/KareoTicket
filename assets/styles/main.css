@@ -5,63 +5,92 @@
 /*************************************************
 	Typography
 **************************************************/
+.status h2 {
+  font-weight: 400; }
 .status .md-button {
   text-align: left;
   text-transform: none;
   white-space: normal;
   color: inherit; }
+.status .project-title {
+  font-size: 0.875rem;
+  text-transform: capitalize; }
 .status .project-deadline, .status .project-owner {
-  font-size: 0.875rem; }
+  font-size: 0.75rem; }
+
+.project-details-dialog .project-title {
+  text-transform: capitalize; }
 
 md-divider.md-default-theme {
   border-top-color: #E0E0E0; }
 
-.md-subheader {
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
+.status .md-subheader {
   z-index: 2;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
   margin: 0; }
-  .md-subheader:not(.md-sticky-no-effect):after {
+  .status .md-subheader:not(.md-sticky-no-effect):after {
     right: 0; }
-  .md-subheader h2 {
-    font-weight: 400; }
 
 md-content.status-submitted {
-  background-color: #454859; }
+  background-color: white; }
+  md-content.status-submitted .md-button {
+    width: 100%; }
   md-content.status-submitted .status-title {
     line-height: 0;
     background-color: #454859;
     color: #FFF; }
 
 md-content.status-inprogress {
-  background-color: #3371b6; }
+  background-color: white; }
+  md-content.status-inprogress .md-button {
+    width: 100%; }
   md-content.status-inprogress .status-title {
     line-height: 0;
     background-color: #3371b6;
     color: #FFF; }
 
 md-content.status-ready {
-  background-color: #f0ad4e; }
+  background-color: white; }
+  md-content.status-ready .md-button {
+    width: 100%; }
   md-content.status-ready .status-title {
     line-height: 0;
     background-color: #f0ad4e;
     color: #FFF; }
 
 md-content.status-completed {
-  background-color: #6fcd83; }
+  background-color: white; }
+  md-content.status-completed .md-button {
+    width: 100%; }
   md-content.status-completed .status-title {
     line-height: 0;
     background-color: #6fcd83;
     color: #FFF; }
 
-.status md-item-content {
-  background-color: white; }
-.status .md-button {
-  width: 100%; }
+.project-details-dialog {
+  width: 650px; }
+  .project-details-dialog .project-title {
+    display: inline-block; }
+  .project-details-dialog .project-priority {
+    display: inline-block;
+    float: right; }
+    .project-details-dialog .project-priority.P1 {
+      color: #F26649; }
+    .project-details-dialog .project-priority.P2 {
+      color: #F0AD4E; }
+    .project-details-dialog .project-priority.P3 {
+      color: #3371b6; }
+  .project-details-dialog .project-details {
+    margin: 1em 0; }
+    .project-details-dialog .project-details > div {
+      margin-bottom: 0.75rem; }
 
 html, body {
   background-color: #EEE; }
 
-header .logo-container {
+header .header-container {
   margin: 0 0.625rem 0 0; }
+  header .header-container * {
+    display: inline-block; }
 
 /*# sourceMappingURL=main.css.map */
