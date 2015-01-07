@@ -4,6 +4,16 @@
 // Header copy
 
 
+// Project common styles
+%title {
+  font-size: rem($project-list-title-font-size);
+  text-transform: capitalize;
+}
+
+%subtitle {
+  font-size: rem($project-list-subtitle-font-size);
+}
+
 // Status box copy
 .status {
   
@@ -19,11 +29,10 @@
 	color: inherit;
   }
   .project-title {
-	font-size: rem($project-list-title-font-size);
-	text-transform: capitalize;
+    @extend %title;
   }
   .project-deadline, .project-owner{
-	font-size: rem($project-list-subtitle-font-size);
+    @extend %subtitle;
   }
 }
 
@@ -32,7 +41,18 @@
   
   .project-title {
 	text-transform: capitalize;
-	
+  }
+  
+}
+
+.project-milestones {
+  
+  .milestone-title {
+    @extend %title;
+  }
+  
+  .milestone-responsible, .milestone-deadline {
+    @extend %subtitle;
   }
   
 }

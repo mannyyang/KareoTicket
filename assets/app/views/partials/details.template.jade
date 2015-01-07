@@ -3,9 +3,8 @@ md-dialog.project-details-dialog
 		div.project-details-header
 			h3.project-title {{dialog.project.name}}
 			span.project-priority(ng-class="dialog.project.priority") {{dialog.project.priority}}
-		md-divider
-		div.project-details-container(layout="row",flex)
-			div.project-details
+		div.project-details-container(layout="row")
+			div.project-details(flex)
 				div.project-owner
 					b Requested by: &nbsp;
 					span {{dialog.project.owner.name}}
@@ -18,6 +17,24 @@ md-dialog.project-details-dialog
 				div.project-description
 					b Project description: &nbsp;
 					div(ng-bind-html="dialog.trustAsHtml(dialog.project.description)")
-			div.project-milestones
+			div.project-milestones-container(flex)
+				md-list.project-milestones(flex)
+					md-item.project-milestone(ng-repeat="milestone in dialog.project.milestones")
+						md-item-content
+							div.md-tile-left
+							div.md-tile-content
+								span.milestone-title {{milestone.Title[0].value}}
+								div.milestone-responsible
+									b Responsible: &nbsp;
+									span {{ milestone["Responsible Team Member"][0].value.name }}
+								div.milestone-deadline(layout="row", layout-align="space-between center")
+									div.milestone-start-date
+										b Start: &nbsp;
+										span {{milestone["Due date"][0]["start_date"]}}
+									div.milestone-end-date
+										b End: &nbsp;
+										span {{milestone["Due date"][0]["end_date"]}}
+								md-progress-linear(md-mode="determinate" ng-value="milestone['Progress'][0]['value']")
+						md-divider(ng-if="!$last")
 	div.md-actions
-		
+		p hello

@@ -18,7 +18,14 @@ module.exports = {
                     },
                     // callback
                     function(err,httpResponse,body){
-                        newMilestones.push(JSON.parse(body.toString()));
+                        var newMilestone = {};
+                        var milestone = JSON.parse(body);
+                        for (var i = 0; i < milestone.fields.length; i++){
+                            newMilestone[milestone.fields[i].label] = milestone.fields[i].values;
+                            
+                        }
+                        
+                        newMilestones.push(newMilestone);
                         callback(err);
                     }
                 );

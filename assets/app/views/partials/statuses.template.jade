@@ -28,7 +28,7 @@ div.app-content(layout="row", layout-margin, flex, ng-controller="ProjectsContro
 										span.deadline
 											b Deadline: &nbsp;
 										span {{project.deadline["start_date"]}}
-						md-divider
+						md-divider(ng-if="!$last")
 
 	+status('submitted', 'SUBMITTED')
 	+status('inprogress', 'IN PROGRESS')

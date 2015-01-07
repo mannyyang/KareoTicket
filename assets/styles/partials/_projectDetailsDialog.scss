@@ -1,6 +1,6 @@
 .project-details-dialog {
 
-  width: 650px;
+  width: 675px;
   
   .project-title {
     display: inline-block;
@@ -9,6 +9,7 @@
   .project-priority {
     display: inline-block;
     float: right;
+    font-weight: bold;
     
     &.P1 {
       color: $priority-p1-color;
@@ -23,14 +24,32 @@
     }
   }
   
-  .project-details {
-    
+  %margin-top-bottom {
     margin: 1em 0;
+    
+  }
+  
+  .project-details {
+    @extend %margin-top-bottom;
 
     > div {
       margin-bottom: rem(12px);
     }
     
+  }
+  
+  .project-milestones {
+    @extend %margin-top-bottom;
+   
+    float: right;
+    width: 100%;
+    padding: 0;
+    border: 1px solid $border-color;
+   
+    .md-tile-content {
+      padding-bottom: 21px;
+      
+    }
   }
 
 }

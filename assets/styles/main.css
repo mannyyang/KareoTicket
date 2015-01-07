@@ -5,6 +5,13 @@
 /*************************************************
 	Typography
 **************************************************/
+.status .project-title, .project-milestones .milestone-title {
+  font-size: 0.875rem;
+  text-transform: capitalize; }
+
+.status .project-deadline, .status .project-owner, .project-milestones .milestone-responsible, .project-milestones .milestone-deadline {
+  font-size: 0.75rem; }
+
 .status h2 {
   font-weight: 400; }
 .status .md-button {
@@ -12,11 +19,6 @@
   text-transform: none;
   white-space: normal;
   color: inherit; }
-.status .project-title {
-  font-size: 0.875rem;
-  text-transform: capitalize; }
-.status .project-deadline, .status .project-owner {
-  font-size: 0.75rem; }
 
 .project-details-dialog .project-title {
   text-transform: capitalize; }
@@ -68,22 +70,30 @@ md-content.status-completed {
     color: #FFF; }
 
 .project-details-dialog {
-  width: 650px; }
+  width: 675px; }
   .project-details-dialog .project-title {
     display: inline-block; }
   .project-details-dialog .project-priority {
     display: inline-block;
-    float: right; }
+    float: right;
+    font-weight: bold; }
     .project-details-dialog .project-priority.P1 {
       color: #F26649; }
     .project-details-dialog .project-priority.P2 {
       color: #F0AD4E; }
     .project-details-dialog .project-priority.P3 {
       color: #3371b6; }
-  .project-details-dialog .project-details {
+  .project-details-dialog .project-details, .project-details-dialog .project-milestones {
     margin: 1em 0; }
-    .project-details-dialog .project-details > div {
-      margin-bottom: 0.75rem; }
+  .project-details-dialog .project-details > div {
+    margin-bottom: 0.75rem; }
+  .project-details-dialog .project-milestones {
+    float: right;
+    width: 100%;
+    padding: 0;
+    border: 1px solid #E0E0E0; }
+    .project-details-dialog .project-milestones .md-tile-content {
+      padding-bottom: 21px; }
 
 html, body {
   background-color: #EEE; }
