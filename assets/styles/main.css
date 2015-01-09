@@ -70,7 +70,7 @@ md-content.status-completed {
     color: #FFF; }
 
 .project-details-dialog {
-  width: 675px; }
+  width: 800px; }
   .project-details-dialog .project-title {
     display: inline-block; }
   .project-details-dialog .project-priority {
@@ -94,6 +94,8 @@ md-content.status-completed {
     border: 1px solid #E0E0E0; }
     .project-details-dialog .project-milestones .md-tile-content {
       padding-bottom: 21px; }
+    .project-details-dialog .project-milestones md-checkbox .md-container {
+      left: 5px; }
 
 html, body {
   background-color: #EEE; }

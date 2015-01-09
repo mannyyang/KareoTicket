@@ -14,4 +14,18 @@
         return this.$sce.trustAsHtml(htmlString);
     }
 
+    DialogController.prototype.getMilestoneStatus = function(status){
+        var boolStatus = false;
+        if (status === "Entered") {
+            boolStatus = false;
+        }
+        else if (status === "Complete"){
+            boolStatus = true;
+        }
+        else {
+            console.log('Could not get milestone status');
+        }
+        return boolStatus;
+    }
+
 })();

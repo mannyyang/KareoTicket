@@ -1,6 +1,6 @@
 .project-details-dialog {
 
-  width: 675px;
+  width: 800px;
   
   .project-title {
     display: inline-block;
@@ -48,8 +48,12 @@
    
     .md-tile-content {
       padding-bottom: 21px;
-      
     }
+
+    md-checkbox .md-container {
+      left: 5px;
+    }
+
   }
 
 }
