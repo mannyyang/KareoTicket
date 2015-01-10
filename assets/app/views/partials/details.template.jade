@@ -38,4 +38,4 @@ md-dialog.project-details-dialog
 								md-progress-linear(md-mode="determinate" ng-value="milestone['Progress'][0]['value']")
 						md-divider(ng-if="!$last")
 	div.md-actions
-		p hello
+		md-button.md-primary(ng-click="dialog.closeDialog()") Close

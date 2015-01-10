@@ -28,4 +28,8 @@
         return boolStatus;
     }
 
+    DialogController.prototype.closeDialog = function (){
+        this.$mdDialog.hide();
+    }
+
 })();
