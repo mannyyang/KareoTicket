@@ -3,11 +3,14 @@ extends layout
 block head
 	meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
 	title Kareo Web Requests
+	
+	// Styles
 	link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css')
 	link(rel='stylesheet', href='/bower_components/angular-material/angular-material.min.css')
 	link(rel='stylesheet', href='/bower_components/angular-material/themes/orange-theme.css')
 	link(rel='stylesheet', href='/styles/main.css')
 
+	// Angular Scripts & Its Dependencies
 	script(src="/bower_components/angular/angular.min.js")
 	script(src="/bower_components/angular-route/angular-route.min.js")
 	script(src="/bower_components/angular-aria/angular-aria.min.js")
@@ -21,7 +24,7 @@ block header
 	header(layout="row", layout-margin)
 		div.header-container
 			img.logo(src="http://www.kareo.com/img/logo.png")
-			h1.app-title Kareo
+			h1.app-title Marketing Web Requests
 
 block content
 	section.main(ng-view)

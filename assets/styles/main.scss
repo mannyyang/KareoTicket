@@ -11,10 +11,12 @@ html, body {
 // top header styles
 header {
   .header-container {
-    @include margin(0 rem(10) 0 0);
+    @include margin(rem(8) 0 0 rem(8));
     
     * {
-      display: inline-block;
+      display: block;
+      float: left;
     }
+
   }
 }

@@ -22,7 +22,7 @@ md-dialog.project-details-dialog
 					md-item.project-milestone(ng-repeat="milestone in dialog.project.milestones")
 						md-item-content
 							div.md-tile-left
-								md-checkbox(ng-disabled="true", aria-label="Disabled", ng-model="status",ng-init="status=dialog.getMilestoneStatus(milestone.Status['0']['value']['text'])")
+								md-checkbox(ng-disabled="true", aria-label="Disabled", ng-model="status", ng-init="status=dialog.getMilestoneStatus(milestone.Status['0']['value']['text'])")
 							div.md-tile-content
 								span.milestone-title {{milestone.Title[0].value}}
 								div.milestone-responsible

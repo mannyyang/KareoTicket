@@ -45,6 +45,7 @@ module.exports =  {
                         AttachMilestonesServices.toProject(project, function(err, attachedProject){
 
                             var kareoProject = {
+                                "type": "project",
                                 "id": attachedProject["item_id"],
                                 "name": attachedProject["title"],
                                 "created_on": attachedProject["created_on"],
