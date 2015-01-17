@@ -22,7 +22,15 @@ module.exports = {
   // }
 
   port: process.env.PORT || 1337,
-  environment: process.env.NODE_ENV || 'development'
-  
+  environment: process.env.NODE_ENV || 'development',
+
+  // Podio Development IDs
+  podio: {
+		webProjectsId: 10786857,
+		tasksId: 10786795,
+		milestonesId: 7805685,
+		currentProjectsViewId: 22826369,
+		currentTasksViewId: 22826263
+	}
 
 };

@@ -1,6 +1,7 @@
-// ParseRawProjectService.js - in api/services
+// ParsePodioObjectService.js - in api/services
 
 module.exports = {
+
     parse: function(project, callback) {
         var fields = {};
 
@@ -11,6 +12,6 @@ module.exports = {
             project.fields = fields;
             callback(err, project);
         });
-
     }
+
 };

@@ -10,7 +10,6 @@
 var Request = require('request');
 
 module.exports = {
-
     authenticate: function(clientId, clientSecret, userName, password, callback){
         Request.post({
                 url:'https://podio.com/oauth/token',

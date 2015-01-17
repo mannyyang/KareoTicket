@@ -1,7 +1,6 @@
 /*************************************************
 	Variables
 **************************************************/
-/* Colors */
 /*************************************************
 	Typography
 **************************************************/
@@ -36,7 +35,11 @@ md-divider.md-default-theme {
   .status .md-subheader:not(.md-sticky-no-effect):after {
     right: 0; }
 
+.md-whiteframe-z1 {
+  position: relative; }
+
 md-content.status-submitted {
+  height: 37.5rem;
   background-color: white; }
   md-content.status-submitted .md-button {
     width: 100%; }
@@ -46,6 +49,7 @@ md-content.status-submitted {
     color: #FFF; }
 
 md-content.status-inprogress {
+  height: 37.5rem;
   background-color: white; }
   md-content.status-inprogress .md-button {
     width: 100%; }
@@ -55,6 +59,7 @@ md-content.status-inprogress {
     color: #FFF; }
 
 md-content.status-ready {
+  height: 37.5rem;
   background-color: white; }
   md-content.status-ready .md-button {
     width: 100%; }
@@ -64,6 +69,7 @@ md-content.status-ready {
     color: #FFF; }
 
 md-content.status-completed {
+  height: 37.5rem;
   background-color: white; }
   md-content.status-completed .md-button {
     width: 100%; }

@@ -1,5 +1,5 @@
 /**
-* Projects.js
+* Item.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -8,7 +8,7 @@
 "use strict";
 
 var Firebase = require('firebase');
-var projectsRef = new Firebase('https://blistering-torch-551.firebaseio.com/projects');
+var projectsRef = new Firebase('https://blistering-torch-551.firebaseio.com/items');
 
 module.exports = {
 
@@ -25,15 +25,15 @@ module.exports = {
 
     },
 
-    create: function(project, callback) {
-        projectsRef.child(project.id).set(project, function(error){
+    create: function(item, callback) {
+        projectsRef.child(item.id).set(item, function(error){
             if (error){
                 console.log('firebase creation error');
-                callback(error);
+                return callback(error);
             }
             else {
                 console.log('firebase creation successful');
-                callback();
+                return callback();
             }
         });
     }

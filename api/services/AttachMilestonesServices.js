@@ -4,7 +4,6 @@ var Request = require('request');
 module.exports = {
 
     toProject: function(project, callback) {
-
         var newMilestones = [];
         var origMilestones = project.fields.task.values;
 
@@ -35,6 +34,6 @@ module.exports = {
                 callback(err, project);
             }
         );
-
     }
+
 };

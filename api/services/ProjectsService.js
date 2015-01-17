@@ -13,7 +13,6 @@
 module.exports =  {
 
     getAllProjectsFromPodio: function(appInfo, callback) {
-
         var viewItems = [];
         var parsedProjects = [];
 
@@ -28,8 +27,8 @@ module.exports =  {
             function(callback){
                 async.each(viewItems,
                     function(item, callback){
-                        ParseRawProjectService.parse(item, function(err, project){
-                            console.log('parsing raw projects service responded');
+                        ParsePodioObjectService.parse(item, function(err, project){
+                            console.log('parsing podio object service responded');
                             parsedProjects.push(project);
                             callback(err);
                         });
@@ -57,14 +56,13 @@ module.exports =  {
                                 "milestones": attachedProject["fields"]["task"]
                             }
 
-                            Project.create(kareoProject, function(err){
+                            Item.create(kareoProject, function(err){
                                 if (err) {
                                     callback(err);
                                 }
                                 else {
                                     callback();
                                 }
-
                             });
 
                         });
@@ -81,10 +79,6 @@ module.exports =  {
         function(err, results){
             return callback(err, results);
         });
-    },
-    //getAllProjectsFromDb: function(callback){
-    //    projectsRef.once('value', function (dataSnapshot){
-    //        return callback(dataSnapshot.val());
-    //    });
-    //}
+    }
+    
 };

@@ -28,15 +28,6 @@ module.exports.podio = {
         accessToken: "",
         created_at: null,
         expires_at: null
-    },
-
-    webProjectsId: 9819541,
-
-    milestonesId: 9819584,
-
-    currentProjectsViewId: 22606065,
-
-    currentProjects: {},
-
-    processedProjects: []
+    }
+    
 };

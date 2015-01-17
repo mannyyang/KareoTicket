@@ -14,9 +14,14 @@ md-divider.md-default-theme {
   }
 }
 
+.md-whiteframe-z1 {
+  position: relative;
+}
+
 // Status box styles
 @mixin status($status, $color){
   md-content.status-#{$status}{
+    height: rem($status-list-height);
     background-color: $project-list-background-color;
     
     .md-button {

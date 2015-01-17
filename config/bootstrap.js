@@ -18,9 +18,14 @@ module.exports.bootstrap = function(cb) {
     var userName = sails.config.podio.userName;
     var password = sails.config.podio.password;
 
-    var appInfo = {
+    var projectsAppInfo = {
         appId: sails.config.podio.webProjectsId,
         viewId: sails.config.podio.currentProjectsViewId
+    }
+
+    var tasksAppInfo = {
+        appId: sails.config.podio.tasksId,
+        viewId: sails.config.podio.currentTasksViewId
     }
 
     // Turning an asynchronous process to a synchronous one.
@@ -34,7 +39,13 @@ module.exports.bootstrap = function(cb) {
         // Get projects from podio, parse them, attach the milestones as an object for easy access.
         // Then, add them to the Firebase database
         function(callback){
-            ProjectsService.getAllProjectsFromPodio(appInfo, function(err, result){
+            ProjectsService.getAllProjectsFromPodio(projectsAppInfo, function(err, result){
+                callback(err, result);
+            });
+        },
+        // Get tasks from podio, parse them, add them to the Firebase database
+        function(callback){
+            TasksService.getAllTasksFromPodio(tasksAppInfo, function(err, result){
                 callback(err, result);
             });
         }
