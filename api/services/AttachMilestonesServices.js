@@ -5,7 +5,7 @@ module.exports = {
 
     toProject: function(project, callback) {
         var newMilestones = [];
-        var origMilestones = project.fields.task.values;
+        var origMilestones = project.fields.task.values || [];
 
         async.each(origMilestones,
             function(milestone, callback) {

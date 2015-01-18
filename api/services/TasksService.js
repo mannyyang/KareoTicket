@@ -73,6 +73,59 @@ module.exports =  {
         function(err, results){
             return callback(err, results);
         });
+    },
+    
+    addNewTask: function(appInfo, callback){
+        var oldItem = {};
+        var parsedItem = {};
+
+        async.series([
+                function(callback){
+                    GetItemService.getItemByID(appInfo, function(err, task){
+                        oldItem = task;
+                        console.log('get item service responded');
+                        callback(err, null);
+                    });
+                },
+                function(callback){
+                    ParsePodioObjectService.parse(oldItem, function(err, parsedTask){
+                        parsedItem = parsedTask;
+                        console.log('parsing podio object service responded');
+                        callback(err, null);
+                    });
+                },
+                function(callback){
+                    
+                    var kareoTask = {
+                        "type": "task",
+                        "id": parsedItem["item_id"],
+                        "name": parsedItem["title"],
+                        "created_on": parsedItem["created_on"],
+                        "priority": parsedItem["fields"]["priority"]["values"]["0"]["value"]["text"],
+                        "description": parsedItem["fields"]["project-description"]["values"]["0"]["value"],
+                        "owner": parsedItem["fields"]["project-owner"]["values"]["0"]["value"],
+                        "status": parsedItem["fields"]["stage"]["values"]["0"]["value"]["text"],
+                        "deadline": parsedItem["fields"]["start-and-finish-dates"]["values"]["0"],
+                    }
+
+                    Item.create(kareoTask, function(err){
+                        if (err) {
+                            return callback(err);
+                        }
+                        else {
+                            return callback();
+                        }
+                    });
+                    
+                },
+            ],
+        // optional callback
+        function(err, results){
+            return callback(err, results);
+        });
+        
+        
     }
+    
     
 };

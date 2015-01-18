@@ -10,17 +10,21 @@ module.exports = {
     addPodioTask: function (req, res) {
         
         var appInfo = {
-            hookID: req.body["hook_id"],
-            code: req.body.code
+            hookID: req.body["hook_id"] || "",
+            code: req.body.code || "",
+            itemID: req.body["item_id"] || ""
         };
 
         switch(req.body.type){
             case "hook.verify":
                 HooksService.validateHook(appInfo, function(err, confirmation) {
-                    return res.json(confirmation);
+                    return res.json({err: err, result: confirmation});
                 });
                 break;
             case "item.create":
+                TasksService.addNewTask(appInfo, function(err, results){
+                    return res.json({err: err, result: results});
+                });
                 break;
             default:
                 console.log("Error: adding podio task was unsuccessful");
