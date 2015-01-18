@@ -48,7 +48,7 @@ module.exports =  {
                             "name": task["title"],
                             "created_on": task["created_on"],
                             "priority": task["fields"]["priority"]["values"]["0"]["value"]["text"],
-                            "description": task["fields"]["project-description"]["values"]["0"]["value"],
+                            "description": typeof task["fields"]["project-description"] !== 'undefined' ? task["fields"]["project-description"]["values"]["0"]["value"] : "",
                             "owner": task["fields"]["project-owner"]["values"]["0"]["value"],
                             "status": task["fields"]["stage"]["values"]["0"]["value"]["text"],
                             "deadline": task["fields"]["start-and-finish-dates"]["values"]["0"],
