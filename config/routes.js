@@ -33,7 +33,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   "GET /": {view: "index"},
-  "POST /task/add": "TaskController.addPodioTask"
+  "POST /tasks/update": "TaskController.updatePodioTasks"
 
   /***************************************************************************
   *                                                                          *

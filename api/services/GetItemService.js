@@ -4,7 +4,7 @@ var Request = require('request');
 module.exports = {
 
     getItemByID: function(appInfo, callback) {
-        Request.post({
+        Request.get({
                 url: 'https://api.podio.com/item/' + appInfo.itemID,
                 headers: {
                     Authorization: "OAuth2 " + sails.config.podio.token.accessToken

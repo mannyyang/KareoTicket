@@ -7,7 +7,7 @@
 
 module.exports = {
     
-    addPodioTask: function (req, res) {
+    updatePodioTasks: function (req, res) {
         
         var appInfo = {
             hookID: req.body["hook_id"] || "",
@@ -22,7 +22,12 @@ module.exports = {
                 });
                 break;
             case "item.create":
-                TasksService.addNewTask(appInfo, function(err, results){
+                TasksService.updateTask(appInfo, function(err, results){
+                    return res.json({err: err, result: results});
+                });
+                break;
+            case "item.update":
+                TasksService.updateTask(appInfo, function(err, results){
                     return res.json({err: err, result: results});
                 });
                 break;

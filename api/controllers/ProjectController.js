@@ -13,7 +13,8 @@ module.exports = {
 
         var appInfo = {
             hookID: req.body["hook_id"],
-            code: req.body.code
+            code: req.body.code,
+            itemID: req.body["item_id"]
         };
 
         switch(req.body.type){
@@ -23,6 +24,9 @@ module.exports = {
                 });
                 break;
             case "item.create":
+                TasksService.addNewTask(appInfo, function(err, results){
+                    return res.json(results);
+                });
                 break;
             default:
                 console.log("Error: adding podio task was unsuccessful");

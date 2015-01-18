@@ -75,7 +75,7 @@ module.exports =  {
         });
     },
     
-    addNewTask: function(appInfo, callback){
+    updateTask: function(appInfo, callback){
         var oldItem = {};
         var parsedItem = {};
 
@@ -84,14 +84,15 @@ module.exports =  {
                     GetItemService.getItemByID(appInfo, function(err, task){
                         oldItem = task;
                         console.log('get item service responded');
-                        callback(err, null);
+                        callback(err, {message: "new task pulled from podio."});
                     });
                 },
                 function(callback){
+                    
                     ParsePodioObjectService.parse(oldItem, function(err, parsedTask){
                         parsedItem = parsedTask;
                         console.log('parsing podio object service responded');
-                        callback(err, null);
+                        callback(err, {message: "new task object has been parsed."});
                     });
                 },
                 function(callback){
@@ -102,7 +103,7 @@ module.exports =  {
                         "name": parsedItem["title"],
                         "created_on": parsedItem["created_on"],
                         "priority": parsedItem["fields"]["priority"]["values"]["0"]["value"]["text"],
-                        "description": parsedItem["fields"]["project-description"]["values"]["0"]["value"],
+                        "description": typeof parsedItem["fields"]["project-description"] !== 'undefined' ? parsedItem["fields"]["project-description"]["values"]["0"]["value"] : "",
                         "owner": parsedItem["fields"]["project-owner"]["values"]["0"]["value"],
                         "status": parsedItem["fields"]["stage"]["values"]["0"]["value"]["text"],
                         "deadline": parsedItem["fields"]["start-and-finish-dates"]["values"]["0"],
@@ -113,7 +114,7 @@ module.exports =  {
                             return callback(err);
                         }
                         else {
-                            return callback();
+                            return callback(err, {message: "task item has been added to firebase."});
                         }
                     });
                     

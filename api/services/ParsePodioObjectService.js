@@ -2,15 +2,15 @@
 
 module.exports = {
 
-    parse: function(project, callback) {
+    parse: function(item, callback) {
         var fields = {};
 
-        async.each(project.fields, function(field, callback){
+        async.each(item.fields, function(field, callback){
             fields[field.external_id] = field;
             callback();
         },function(err){
-            project.fields = fields;
-            callback(err, project);
+            item.fields = fields;
+            callback(err, item);
         });
     }
 

@@ -7,12 +7,10 @@
     function ItemsController($mdDialog, $firebase){
 
         var projectsRef = new Firebase('https://blistering-torch-551.firebaseio.com/items');
-        var sync = $firebase(projectsRef).$asArray();
+        var list = $firebase(projectsRef).$asArray();
         
-        this.unsorted = sync;
+        this.unsorted = list;
         this.$mdDialog = $mdDialog;
-        
-        
     }
     
     ItemsController.prototype.viewDetails = function($event, item){
