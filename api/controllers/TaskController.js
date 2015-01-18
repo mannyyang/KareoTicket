@@ -1,16 +1,14 @@
 /**
- * ProjectController
+ * TaskController
  *
  * @description :: Server-side logic
  * @help        ::
  */
 
-"use strict";
-
 module.exports = {
     
-    addPodioProject: function (req, res) {
-
+    addPodioTask: function (req, res) {
+        
         var appInfo = {
             hookID: req.body["hook_id"],
             code: req.body.code

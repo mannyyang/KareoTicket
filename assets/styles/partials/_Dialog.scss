@@ -1,6 +1,10 @@
+md-backdrop, .md-dialog-container {
+  position: fixed !important;
+}
+
 .project-details-dialog {
 
-  width: 800px;
+  width: $project-dialog-width;
   
   .project-title {
     display: inline-block;

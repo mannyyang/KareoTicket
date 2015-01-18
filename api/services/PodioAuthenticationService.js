@@ -24,11 +24,12 @@ module.exports = {
             // callback after authentication attempt
             function(err,httpResponse,body){
                 if (err){
+                    console.error('Podio Authentication Error');
                     res.error('Podio Authentication Error');
                     return callback(err, null);
                 }
                 else {
-                    console.log('policy went through');
+                    console.log('Podio Authentication went through');
                     var parsedBody = JSON.parse(body.toString());
 
                     sails.config.podio.token.accessToken = parsedBody.access_token;

@@ -1,6 +1,6 @@
-div.app-content(layout="row", layout-margin, flex, ng-controller="ProjectsController as projects")
+div.app-content(layout="row", layout-margin, flex, ng-controller="ItemsController as items")
 	mixin status(status, name)
-		md-whiteframe.md-whiteframe-z1(layout="columns", flex)
+		md-whiteframe(class="md-whiteframe-z1 status-container "+status, layout="column", flex)
 			md-content(class="status status-"+status, flex)
 				md-subheader.status-title
 					h2= name
@@ -14,20 +14,20 @@ div.app-content(layout="row", layout-margin, flex, ng-controller="ProjectsContro
 						- currStatus = 'Ready'
 					else if status === 'completed'
 						- currStatus = 'Complete'
-					md-item(ng-repeat="project in projects.unsorted | filter: {status: '#{currStatus}'}")
+					md-item(ng-repeat="item in items.unsorted | filter: {status: '#{currStatus}'}")
 						md-item-content
-							md-button(ng-click="projects.viewDetails($event, project)")
+							md-button(ng-click="items.viewDetails($event, item)")
 								div.md-tile-left
 								div.md-tile-content
-									div.project-title {{project.name}}
+									div.project-title {{item.name}}
 									div.project-owner
 										span.owner
 											b Requested by: &nbsp;
-										span {{project.owner.name}}
+										span {{item.owner.name}}
 									div.project-deadline
 										span.deadline
 											b Deadline: &nbsp;
-										span {{project.deadline["start_date"]}}
+										span {{item.deadline["start_date"]}}
 						md-divider(ng-if="!$last")
 
 	+status('submitted', 'SUBMITTED')

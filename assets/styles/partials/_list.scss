@@ -2,28 +2,35 @@ md-divider.md-default-theme {
   border-top-color: $border-color;
 }
 
-// List header styles
-.status .md-subheader {
-  z-index: 2;
-  
-  @include padding(rem(8) rem(8) rem(8) rem(16));
-  @include margin(0 0 0 0);
-
-  &:not(.md-sticky-no-effect):after {
-    right: 0;
-  }
-}
-
-.md-whiteframe-z1 {
+// Status container which uses an md-whiteframe
+.status-container {
   position: relative;
 }
 
+
+// List header styles
+.md-subheader {
+  margin-right: 0;
+}
+.md-subheader:not(.md-sticky-no-effect):after {
+  right: 0;
+  margin-right: 0;
+}
+
 // Status box styles
-@mixin status($status, $color){
-  md-content.status-#{$status}{
+@mixin status($status, $color) {
+
+  .#{$status} .md-subheader:not(.md-sticky-no-effect)[sticky-state=active] {
+    line-height: 0;
+    background-color: $color;
+    color: $subheader-font-color;
+    margin-top: 0px;
+  }
+
+  md-content.status-#{$status} {
     height: rem($status-list-height);
     background-color: $project-list-background-color;
-    
+
     .md-button {
       width: 100%;
     }
@@ -34,6 +41,7 @@ md-divider.md-default-theme {
       color: $subheader-font-color;
     }
   }
+
 }
 
 @include status('submitted', $submitted-color);

@@ -1,0 +1,21 @@
+md-dialog.project-details-dialog
+	md-content
+		div.project-details-header(layout="row", layout-margin, layout-align="space-between")
+			h3.project-title {{dialog.task.name}}
+			span.project-priority(ng-class="dialog.task.priority") {{dialog.task.priority}}
+		div.project-details-container(layout="row", layout-margin)
+			div.project-details(flex)
+				div.project-owner
+					b Requested by: &nbsp;
+					span {{dialog.task.owner.name}}
+				div.project-status 
+					b Status: &nbsp;
+					span {{dialog.task.status}}
+				div.project-deadline
+					b Deadline: &nbsp;
+					span {{dialog.task.deadline["start_date"]}}
+				div.project-description
+					b Task description: &nbsp;
+					div(ng-bind-html="dialog.trustAsHtml(dialog.task.description)")
+	div.md-actions
+		md-button.md-primary(ng-click="dialog.closeDialog()") Close

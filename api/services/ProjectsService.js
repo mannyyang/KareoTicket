@@ -1,8 +1,8 @@
 /**
- * GetProjects
+ * Projects Service
  *
- * @module      :: Policy
- * @description :: Simple policy to get current projects with Podio.
+ * @module      :: Service
+ * @description :: Services for CRUD functions with Podio.
  *
  * @docs        ::
  *
@@ -28,7 +28,7 @@ module.exports =  {
                 async.each(viewItems,
                     function(item, callback){
                         ParsePodioObjectService.parse(item, function(err, project){
-                            console.log('parsing podio object service responded');
+                            console.log('parsing podio project succeeded');
                             parsedProjects.push(project);
                             callback(err);
                         });
@@ -79,6 +79,11 @@ module.exports =  {
         function(err, results){
             return callback(err, results);
         });
+    },
+    
+    addPodioProject: function(appInfo, callback){
+        
+        
     }
     
 };

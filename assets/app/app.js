@@ -8,7 +8,7 @@
             $routeProvider.
                 when('/', {
                     templateUrl: 'app/views/partials/statuses.template.html',
-                    controller: 'ProjectsController'
+                    controller: 'ItemsController'
                 }).
                 otherwise({
                     redirectTo: '/hello'

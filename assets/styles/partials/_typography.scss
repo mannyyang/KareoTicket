@@ -18,6 +18,12 @@
 }
 
 // Status box copy
+.status-container {
+  h2.ng-scope {
+    font-weight: $subheader-font-weight;
+  }
+}
+
 .status {
   
   h2 {

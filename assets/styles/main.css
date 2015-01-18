@@ -14,6 +14,9 @@
 .status .project-deadline, .status .project-owner, .project-milestones .milestone-responsible, .project-milestones .milestone-deadline {
   font-size: 0.75rem; }
 
+.status-container h2.ng-scope {
+  font-weight: 400; }
+
 .status h2 {
   font-weight: 400; }
 .status .md-button {
@@ -28,18 +31,24 @@
 md-divider.md-default-theme {
   border-top-color: #E0E0E0; }
 
-.status .md-subheader {
-  z-index: 2;
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
-  margin: 0; }
-  .status .md-subheader:not(.md-sticky-no-effect):after {
-    right: 0; }
-
-.md-whiteframe-z1 {
+.status-container {
   position: relative; }
 
+.md-subheader {
+  margin-right: 0; }
+
+.md-subheader:not(.md-sticky-no-effect):after {
+  right: 0;
+  margin-right: 0; }
+
+.submitted .md-subheader:not(.md-sticky-no-effect)[sticky-state=active] {
+  line-height: 0;
+  background-color: #454859;
+  color: #FFF;
+  margin-top: 0px; }
+
 md-content.status-submitted {
-  height: 37.5rem;
+  height: 43.75rem;
   background-color: white; }
   md-content.status-submitted .md-button {
     width: 100%; }
@@ -48,8 +57,14 @@ md-content.status-submitted {
     background-color: #454859;
     color: #FFF; }
 
+.inprogress .md-subheader:not(.md-sticky-no-effect)[sticky-state=active] {
+  line-height: 0;
+  background-color: #3371b6;
+  color: #FFF;
+  margin-top: 0px; }
+
 md-content.status-inprogress {
-  height: 37.5rem;
+  height: 43.75rem;
   background-color: white; }
   md-content.status-inprogress .md-button {
     width: 100%; }
@@ -58,8 +73,14 @@ md-content.status-inprogress {
     background-color: #3371b6;
     color: #FFF; }
 
+.ready .md-subheader:not(.md-sticky-no-effect)[sticky-state=active] {
+  line-height: 0;
+  background-color: #f0ad4e;
+  color: #FFF;
+  margin-top: 0px; }
+
 md-content.status-ready {
-  height: 37.5rem;
+  height: 43.75rem;
   background-color: white; }
   md-content.status-ready .md-button {
     width: 100%; }
@@ -68,8 +89,14 @@ md-content.status-ready {
     background-color: #f0ad4e;
     color: #FFF; }
 
+.completed .md-subheader:not(.md-sticky-no-effect)[sticky-state=active] {
+  line-height: 0;
+  background-color: #6fcd83;
+  color: #FFF;
+  margin-top: 0px; }
+
 md-content.status-completed {
-  height: 37.5rem;
+  height: 43.75rem;
   background-color: white; }
   md-content.status-completed .md-button {
     width: 100%; }
@@ -78,8 +105,11 @@ md-content.status-completed {
     background-color: #6fcd83;
     color: #FFF; }
 
+md-backdrop, .md-dialog-container {
+  position: fixed !important; }
+
 .project-details-dialog {
-  width: 800px; }
+  width: 50rem; }
   .project-details-dialog .project-title {
     display: inline-block; }
   .project-details-dialog .project-priority {
@@ -107,6 +137,7 @@ md-content.status-completed {
       left: 5px; }
 
 html, body {
+  height: initial;
   background-color: #EEE; }
 
 header .header-container {
