@@ -5,7 +5,6 @@
     app.controller('ItemsController', ItemsController);
 
     function ItemsController($mdDialog, $firebase){
-
         var projectsRef = new Firebase('https://blistering-torch-551.firebaseio.com/items');
         var list = $firebase(projectsRef).$asArray();
         

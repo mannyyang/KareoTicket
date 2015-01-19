@@ -88,7 +88,6 @@ module.exports =  {
                     });
                 },
                 function(callback){
-                    
                     ParsePodioObjectService.parse(oldItem, function(err, parsedTask){
                         parsedItem = parsedTask;
                         console.log('parsing podio object service responded');

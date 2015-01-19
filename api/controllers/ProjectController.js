@@ -8,8 +8,8 @@
 "use strict";
 
 module.exports = {
-    
-    addPodioProject: function (req, res) {
+
+    updatePodioProjects: function (req, res) {
 
         var appInfo = {
             hookID: req.body["hook_id"],
@@ -24,12 +24,17 @@ module.exports = {
                 });
                 break;
             case "item.create":
-                TasksService.addNewTask(appInfo, function(err, results){
+                ProjectsService.updateProject(appInfo, function(err, results){
+                    return res.json(results);
+                });
+                break;
+            case "item.update":
+                ProjectsService.updateProject(appInfo, function(err, results){
                     return res.json(results);
                 });
                 break;
             default:
-                console.log("Error: adding podio task was unsuccessful");
+                console.log("Error: adding podio project was unsuccessful");
         }
         
     }
