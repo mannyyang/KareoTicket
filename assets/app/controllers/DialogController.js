@@ -27,7 +27,6 @@
                 break;
             default:
                 console.log('Could not get milestone status');
-            
         }
         
         return boolStatus;

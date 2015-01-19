@@ -50,6 +50,7 @@ module.exports =  {
                             "priority": task["fields"]["priority"]["values"]["0"]["value"]["text"],
                             "description": typeof task["fields"]["project-description"] !== 'undefined' ? task["fields"]["project-description"]["values"]["0"]["value"] : "",
                             "owner": task["fields"]["project-owner"]["values"]["0"]["value"],
+                            "responsible": task["fields"]["responsible"]["values"]["0"]["value"],
                             "status": task["fields"]["stage"]["values"]["0"]["value"]["text"],
                             "deadline": task["fields"]["start-and-finish-dates"]["values"]["0"],
                         }
@@ -104,6 +105,7 @@ module.exports =  {
                         "priority": parsedItem["fields"]["priority"]["values"]["0"]["value"]["text"],
                         "description": typeof parsedItem["fields"]["project-description"] !== 'undefined' ? parsedItem["fields"]["project-description"]["values"]["0"]["value"] : "",
                         "owner": parsedItem["fields"]["project-owner"]["values"]["0"]["value"],
+                        "responsible": parsedItem["fields"]["responsible"]["values"]["0"]["value"],
                         "status": parsedItem["fields"]["stage"]["values"]["0"]["value"]["text"],
                         "deadline": parsedItem["fields"]["start-and-finish-dates"]["values"]["0"],
                     }

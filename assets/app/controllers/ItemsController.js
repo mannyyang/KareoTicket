@@ -29,7 +29,6 @@
                 locals: {task: item, project: item}
             });
         }
-        
     }
 
 

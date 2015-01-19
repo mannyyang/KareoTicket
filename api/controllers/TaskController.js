@@ -8,7 +8,6 @@
 module.exports = {
     
     updatePodioTasks: function (req, res) {
-        
         var appInfo = {
             hookID: req.body["hook_id"] || "",
             code: req.body.code || "",
@@ -39,7 +38,6 @@ module.exports = {
             default:
                 console.log("Error: adding podio task was unsuccessful");
         }
-        
     }
 
 };

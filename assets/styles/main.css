@@ -51,6 +51,7 @@ md-content.status-submitted {
   height: 43.75rem;
   background-color: white; }
   md-content.status-submitted .md-button {
+    position: relative;
     width: 100%; }
   md-content.status-submitted .status-title {
     line-height: 0;
@@ -67,6 +68,7 @@ md-content.status-inprogress {
   height: 43.75rem;
   background-color: white; }
   md-content.status-inprogress .md-button {
+    position: relative;
     width: 100%; }
   md-content.status-inprogress .status-title {
     line-height: 0;
@@ -83,6 +85,7 @@ md-content.status-ready {
   height: 43.75rem;
   background-color: white; }
   md-content.status-ready .md-button {
+    position: relative;
     width: 100%; }
   md-content.status-ready .status-title {
     line-height: 0;
@@ -99,51 +102,96 @@ md-content.status-completed {
   height: 43.75rem;
   background-color: white; }
   md-content.status-completed .md-button {
+    position: relative;
     width: 100%; }
   md-content.status-completed .status-title {
     line-height: 0;
     background-color: #6fcd83;
     color: #FFF; }
 
+.type-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  color: white; }
+  .type-container.project {
+    height: 0;
+    width: 0;
+    border-top: 35px solid #F7941D;
+    border-left: 35px solid transparent; }
+    .type-container.project::after {
+      position: absolute;
+      top: -35px;
+      left: -15px;
+      content: "P"; }
+  .type-container.task {
+    height: 0;
+    width: 0;
+    border-top: 35px solid lightgrey;
+    border-left: 35px solid transparent; }
+    .type-container.task::after {
+      position: absolute;
+      top: -35px;
+      left: -15px;
+      content: "T"; }
+
 md-backdrop, .md-dialog-container {
   position: fixed !important; }
 
-.project-details-dialog {
+.request-dialog {
+  width: 37.5rem; }
+  .request-dialog md-content {
+    height: 650px; }
+  .request-dialog iframe {
+    border: none;
+    width: 100%;
+    height: 571px; }
+
+.project-details-dialog, .task-details-dialog {
   width: 50rem; }
-  .project-details-dialog .project-title {
+  .project-details-dialog .project-title, .task-details-dialog .project-title {
     display: inline-block; }
-  .project-details-dialog .project-priority {
+  .project-details-dialog .project-priority, .task-details-dialog .project-priority {
     display: inline-block;
     float: right;
     font-weight: bold; }
-    .project-details-dialog .project-priority.P1 {
+    .project-details-dialog .project-priority.P1, .task-details-dialog .project-priority.P1 {
       color: #F26649; }
-    .project-details-dialog .project-priority.P2 {
+    .project-details-dialog .project-priority.P2, .task-details-dialog .project-priority.P2 {
       color: #F0AD4E; }
-    .project-details-dialog .project-priority.P3 {
+    .project-details-dialog .project-priority.P3, .task-details-dialog .project-priority.P3 {
       color: #3371b6; }
-  .project-details-dialog .project-details, .project-details-dialog .project-milestones {
+  .project-details-dialog .project-details, .project-details-dialog .project-milestones, .task-details-dialog .project-details, .task-details-dialog .project-milestones {
     margin: 1em 0; }
-  .project-details-dialog .project-details > div {
+  .project-details-dialog .project-details > div, .task-details-dialog .project-details > div {
     margin-bottom: 0.75rem; }
-  .project-details-dialog .project-milestones {
+  .project-details-dialog .project-milestones, .task-details-dialog .project-milestones {
     float: right;
     width: 100%;
     padding: 0;
     border: 1px solid #E0E0E0; }
-    .project-details-dialog .project-milestones .md-tile-content {
+    .project-details-dialog .project-milestones .md-tile-content, .task-details-dialog .project-milestones .md-tile-content {
       padding-bottom: 21px; }
-    .project-details-dialog .project-milestones md-checkbox .md-container {
+    .project-details-dialog .project-milestones md-checkbox .md-container, .task-details-dialog .project-milestones md-checkbox .md-container {
       left: 5px; }
+
+.task-details-dialog {
+  width: 37.5rem; }
 
 html, body {
   height: initial;
-  background-color: #EEE; }
+  background-color: #EEEEEE; }
 
 header .header-container {
+  width: 100%;
   margin: 0.5rem 0 0 0.5rem; }
   header .header-container * {
     display: block;
     float: left; }
+  header .header-container .request-container {
+    float: right;
+    margin-top: 30px;
+    margin-right: 15px; }
 
 /*# sourceMappingURL=main.css.map */

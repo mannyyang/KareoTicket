@@ -3,12 +3,16 @@
 **************************************************/
 // Sizes
 $project-dialog-width: rem(800);
+$task-dialog-width: rem(600);
+$request-dialog-width: rem(600);
 $status-list-height: 700px;
 
 
-
 // Colors
-$background-color: #EEE;
+$kareo-orange: #F7941D;
+$light-grey: lightgrey;
+
+$background-color: #EEEEEE;
 $subheader-font-color: #FFF;
 
 $submitted-color: #454859;

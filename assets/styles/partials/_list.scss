@@ -32,6 +32,7 @@ md-divider.md-default-theme {
     background-color: $project-list-background-color;
 
     .md-button {
+      position: relative;
       width: 100%;
     }
 
@@ -40,6 +41,7 @@ md-divider.md-default-theme {
       background-color: $color;
       color: $subheader-font-color;
     }
+
   }
 
 }
@@ -48,3 +50,41 @@ md-divider.md-default-theme {
 @include status('inprogress', $inprogress-color);
 @include status('ready', $ready-color);
 @include status('completed', $completed-color);
+
+
+.type-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  color: white;
+  
+  %type {
+    position: absolute;
+    top: -35px;
+    left: -15px;
+  }
+
+  &.project {
+    @include triangle(35px, $kareo-orange, up-right);
+
+    &::after {
+      position: absolute;
+      top: -35px;
+      left: -15px;
+      content: "P";
+      
+    }
+  }
+  
+  &.task {
+    @include triangle(35px, $light-grey, up-right);
+
+    &::after {
+      position: absolute;
+      top: -35px;
+      left: -15px;
+      content: "T";
+    }
+  }
+}

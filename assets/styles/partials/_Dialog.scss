@@ -2,7 +2,22 @@ md-backdrop, .md-dialog-container {
   position: fixed !important;
 }
 
-.project-details-dialog {
+.request-dialog {
+  width: $request-dialog-width;
+
+  md-content {
+    height: 650px;
+  }
+  
+  iframe {
+    border: none;
+    width: 100%;
+    height: 571px;
+  }
+  
+}
+
+.project-details-dialog, .task-details-dialog {
 
   width: $project-dialog-width;
   
@@ -60,4 +75,8 @@ md-backdrop, .md-dialog-container {
 
   }
 
+}
+
+.task-details-dialog {
+  width: $task-dialog-width;
 }

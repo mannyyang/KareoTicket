@@ -17,7 +17,7 @@ div.app-content(layout="row", layout-margin, flex, ng-controller="ItemsControlle
 					md-item(ng-repeat="item in items.unsorted | filter: {status: '#{currStatus}'}")
 						md-item-content
 							md-button(ng-click="items.viewDetails($event, item)")
-								div.md-tile-left
+								div(class="type-container {{item.type}}")
 								div.md-tile-content
 									div.project-title {{item.name}}
 									div.project-owner

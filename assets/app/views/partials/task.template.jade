@@ -1,4 +1,4 @@
-md-dialog.project-details-dialog
+md-dialog.task-details-dialog
 	md-content
 		div.project-details-header(layout="row", layout-margin, layout-align="space-between")
 			h3.project-title {{dialog.task.name}}
@@ -8,6 +8,9 @@ md-dialog.project-details-dialog
 				div.project-owner
 					b Requested by: &nbsp;
 					span {{dialog.task.owner.name}}
+				div.project-responsible
+					b Responsible: &nbsp;
+					span {{dialog.task.responsible.name}}
 				div.project-status 
 					b Status: &nbsp;
 					span {{dialog.task.status}}

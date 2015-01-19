@@ -33,6 +33,11 @@ module.exports = {
                     return res.json(results);
                 });
                 break;
+            case "item.delete":
+                ProjectsService.removeProject(appInfo, function(err, results){
+                    return res.json({err: err, result: results});
+                });
+                break;
             default:
                 console.log("Error: adding podio project was unsuccessful");
         }

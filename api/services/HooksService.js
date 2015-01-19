@@ -26,7 +26,8 @@ module.exports =  {
             },
             // callback after validation attempt
             function(err,httpResponse,body){
-                console.log("Hook has been validated.");
+                if (!err)
+                    console.log("Hook has been validated.");
                 callback(err, body);
             }
         );

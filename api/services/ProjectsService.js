@@ -132,6 +132,13 @@ module.exports =  {
             return callback(err, results);
         });
         
+    },
+
+    removeProject: function(appInfo, callback){
+        Item.remove(appInfo.itemID, function(err, confirmation){
+            return callback(err, confirmation);
+        });
+
     }
     
 };

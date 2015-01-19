@@ -12,11 +12,18 @@ html, body {
 // top header styles
 header {
   .header-container {
+    width: 100%;
     @include margin(rem(8) 0 0 rem(8));
     
     * {
       display: block;
       float: left;
+    }
+    
+    .request-container {
+      float: right;
+      margin-top: 30px;
+      margin-right: 15px;
     }
 
   }
