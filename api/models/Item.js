@@ -36,6 +36,19 @@ module.exports = {
                 return callback();
             }
         });
+    },
+    
+    remove: function(itemID, callback){
+        projectsRef.child(itemID).set(null, function(error){
+            if (error){
+                console.log('firebase deletion error');
+                return callback(error, {message: "firebase deletion error"});
+            }
+            else {
+                console.log('firebase deletion successful');
+                return callback(error, {message: "firebase deletion successful."});
+            }
+        });
     }
 };
 

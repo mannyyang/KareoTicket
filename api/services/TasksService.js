@@ -126,7 +126,13 @@ module.exports =  {
         });
         
         
-    }
+    },
     
+    removeTask: function(appInfo, callback){
+        Item.remove(appInfo.itemID, function(err, confirmation){
+            return callback(err, confirmation);
+        });
+        
+    }
     
 };

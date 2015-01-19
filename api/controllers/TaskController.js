@@ -31,6 +31,11 @@ module.exports = {
                     return res.json({err: err, result: results});
                 });
                 break;
+            case "item.delete":
+                TasksService.removeTask(appInfo, function(err, results){
+                    return res.json({err: err, result: results});
+                });
+                break;
             default:
                 console.log("Error: adding podio task was unsuccessful");
         }
