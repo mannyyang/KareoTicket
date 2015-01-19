@@ -26,7 +26,16 @@ module.exports = {
    ***************************************************************************/
 
   port: process.env.PORT || 8080,
-  environment: process.env.NODE_ENV || 'production'
+  environment: process.env.NODE_ENV || 'production',
+
+  // Podio Development IDs
+  podio: {
+    webProjectsId: 10786857,
+    tasksId: 10786795,
+    milestonesId: 7805685,
+    currentProjectsViewId: 22826369,
+    currentTasksViewId: 22826263
+  }
 
   /***************************************************************************
    * Set the log level in production environment to "silent"                 *
