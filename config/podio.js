@@ -18,7 +18,7 @@ module.exports.podio = {
      ***************************************************************************/
     clientId: 'kareo-ticket-a6e47p',
 
-    clientSecret: 'QsrllLP1FFoswsZiWSCHMhYyDJIEeMrExh7uVUnpaQ5MxXLlINx7QlOK5KDKx1j2',
+    clientSecret: 'TAVBNC59fxI8xRfC372Y4bAZGMuuwBH8GBW2RE4TrftqIRxTmVCo6jq3oatz9xVS',
 
     userName: 'marketing@kareo.com',
 
