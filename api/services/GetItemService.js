@@ -12,6 +12,7 @@ module.exports = {
             },
             // callback after authentication attempt
             function(err,httpResponse,body){
+                console.log(httpResponse.headers);
                 callback(err, JSON.parse(body.toString()));
             }
         );

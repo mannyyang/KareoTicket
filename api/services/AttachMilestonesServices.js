@@ -17,6 +17,7 @@ module.exports = {
                     },
                     // callback
                     function(err,httpResponse,body){
+                        console.log(httpResponse.headers);
                         var newMilestone = {};
                         var milestone = JSON.parse(body);
                         for (var i = 0; i < milestone.fields.length; i++){

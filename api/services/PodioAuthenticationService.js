@@ -29,7 +29,7 @@ module.exports = {
                     return callback(err, null);
                 }
                 else {
-                    console.log('Podio Authentication went through');
+                    console.log('Podio Authentication went through', httpResponse.headers);
                     var parsedBody = JSON.parse(body.toString());
 
                     sails.config.podio.token.accessToken = parsedBody.access_token;
